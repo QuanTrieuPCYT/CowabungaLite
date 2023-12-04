@@ -22,7 +22,7 @@ class MainUtils {
         case footnote = "SpringboardOptions/ConfigProfileDomain/Library/ConfigurationProfiles/SharedDeviceConfiguration.plist"
         case wifi = "SpringboardOptions/SystemPreferencesDomain/SystemConfiguration/com.apple.wifi.plist"
         case uikit = "SpringboardOptions/ManagedPreferencesDomain/mobile/com.apple.UIKit.plist"
-        case accessibility = "SpringboardOptions/ManagedPreferencesDomain/mobile/com.apple.Accessibility.plist"
+        // case accessibility = "SpringboardOptions/ManagedPreferencesDomain/mobile/com.apple.Accessibility.plist" // disable the initialization of the accessibility plist - prevents some of the settings from being borked.
         case wifiDebug = "SpringboardOptions/ManagedPreferencesDomain/mobile/com.apple.MobileWiFi.debug.plist"
         case airdrop = "SpringboardOptions/ManagedPreferencesDomain/mobile/com.apple.sharingd.plist"
         
@@ -193,7 +193,7 @@ class MainUtils {
         .init(key: "SBNeverBreadcrumb", name: "Disable Breadcrumb", fileLocation: .springboard),
         .init(key: "SBShowSupervisionTextOnLockScreen", name: "Show Supervision Text on Lock Screen", fileLocation: .springboard),
         .init(key: "CCSPresentationGesture", name: "Disable CC Presentation Gesture", fileLocation: .springboard, invertValue: true, dividerBelow: true),
-        .init(key: "StartupSoundEnabled", name: "Play Sound on Shutdown", fileLocation: .accessibility),
+        // .init(key: "StartupSoundEnabled", name: "Play Sound on Shutdown", fileLocation: .accessibility), // temp fix - disable the initialization of this option to restore "Power Off & On Sounds" functionality on iPhone 14 and later models
         .init(key: "WiFiManagerLoggingEnabled", name: "Show WiFi Debugger", fileLocation: .wifiDebug),
         .init(key: "DiscoverableMode", name: "Permanently Allow Receiving AirDrop from Everyone", fileLocation: .airdrop)
     ]
